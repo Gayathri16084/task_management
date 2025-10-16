@@ -45,7 +45,7 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-success px-3">
-    <a class="navbar-brand fw-bold" href="#">HungryBird</a>
+    <a class="navbar-brand fw-bold" href="#">HungryBirdJobs</a>
 
     <div class="ms-auto dropdown">
       <button class="btn btn-success dropdown-toggle d-flex align-items-center" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
