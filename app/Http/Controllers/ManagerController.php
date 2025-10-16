@@ -163,7 +163,7 @@ public function deleteLead($id)
 //profile
 public function profileview()
 {
-    $userId = session('user_id'); // get logged-in user's ID
+    $userId = session('user_id'); 
 
     $profile = Profiles::where('management_id', $userId)->first();
     if (!$profile) {
@@ -195,7 +195,7 @@ public function updateProfile(Request $request)
         'image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
     ]);
 
-    // Try to find profile of this specific user
+   
     $profile = Profiles::where('management_id', $userId)->first();
 
     // If not exist, create a new one

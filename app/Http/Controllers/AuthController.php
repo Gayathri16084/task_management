@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
-    // Show login form
+    // show login form
     public function showLoginForm($role)
     {
         return view('auth.login', compact('role'));

@@ -39,8 +39,14 @@
               <td>{{ $lead->days }}</td>
               
               <td>
-                
-                <a href="{{ route("manager.leads.delete",$lead->id) }}" class="btn btn-sm btn-warning me-1">delete</a>
+              <form action="{{ route('manager.leads.delete', $lead->id) }}" method="POST" style="display:inline;">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger btn-sm"
+        onclick="return confirm('Are you sure you want to delete this lead?')">
+        Delete
+    </button>
+</form>
               </td>
             </tr>
             @endforeach

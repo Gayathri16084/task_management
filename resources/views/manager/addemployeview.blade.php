@@ -8,7 +8,7 @@
     <h2 class="mb-4 text-center">Add Employee</h2>
 
     <form action="{{ route('manager.addemployee') }}" method="POST" class="mx-auto" style="max-width: 500px;" enctype="multipart/form-data">
-        @csrf <!-- Don't forget CSRF token for POST -->
+        @csrf 
        
 
 

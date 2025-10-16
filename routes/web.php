@@ -62,7 +62,9 @@ Route::get('/manager/addleads', [ManagerController::class, 'storeLeadtable'])->n
 Route::post('/manager/addleads', [ManagerController::class, 'storeLead'])->name('manager.leadsstore');
 
 // to delete
-Route::post('/manager/leads/{id}', [ManagerController::class, 'deleteLead'])->name('manager.leads.delete');
+Route::delete('/manager/leads/{id}', [ManagerController::class, 'deleteLead'])
+    ->name('manager.leads.delete');
+
 
 
 //chatify

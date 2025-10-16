@@ -55,10 +55,7 @@
       </button>
 
       <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="profileDropdown">
-        <!-- <li class="px-3 py-2 border-bottom">
-          <p class="fw-semibold mb-0">{{ session('user_name') }}
-          <small class="text-muted">{{ session('role') }}</small>
-        </li> -->
+        
         <li><a class="dropdown-item" href="{{ route("manager.profileview") }}">Profile</a></li>
         <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
       </ul>
@@ -66,7 +63,7 @@
   </nav>
 
   <div class="d-flex flex-grow-1">
-    <!-- Sidebar -->
+  
     <aside class="sidebar">
       <h4 class="fw-semibold mb-4">Menu</h4>
       <a href="{{ route("manager.dashboard") }}">Dashboard</a>
@@ -75,13 +72,13 @@
       
     </aside>
 
-    <!-- Page Content -->
+   
     <main class="flex-fill">
       @yield("content")
     </main>
   </div>
 
-  <!-- Footer -->
+  
   <footer>
     &copy; 2025 Work Management System
   </footer>
