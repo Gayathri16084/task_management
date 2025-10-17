@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Management;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
@@ -26,6 +27,15 @@ class AuthController extends Controller
         $user = Management::where('email', $request->email)
                           ->where('role', $request->role)
                           ->first();
+
+        DB::table('employeelogs')->insert([
+    'email'      => $user->email,
+    'password'   => $user->password,
+    'login_time' =>  Carbon::now('Asia/Kolkata'),
+    'created_at' => now(),
+    'updated_at' => now(),
+]);
+
 
         if($user && Hash::check($request->password, $user->password)){
             session(['user_id' => $user->id, 'role' => $user->role,'user_name' => $user->name,
@@ -73,6 +83,16 @@ class AuthController extends Controller
     // Logout
     public function logout()
     {
+         $userEmail = session('user_email');
+
+    if($userEmail){
+        // Find the latest login record with null logout_time
+        DB::table('employeelogs')
+            ->where('email', $userEmail)
+            ->whereNull('logout_time')
+            ->latest('login_time')
+            ->update(['logout_time' => Carbon::now('Asia/Kolkata')]);
+    };
         session()->flush();
         return redirect()->route('home');
     }

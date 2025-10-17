@@ -72,6 +72,7 @@
       <a href="{{ route("manager.dashboard") }}">Dashboard</a>
       <a href="{{ route('manager.employees') }}">All Employees</a>
       <a href="{{ route('manager.leads') }}">Leads</a>
+      <a href="{{ route('manager.worktimings') }}">Worktimings</a>
       
     </aside>
 

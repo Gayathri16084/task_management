@@ -219,6 +219,12 @@ public function updateProfile(Request $request)
 
     return redirect()->route('manager.profileview')->with('success', 'Profile updated successfully!');
 }
+//worktimings
+public function worktimings(){
+
+    $timings = DB::table('employeelogs')->get();
+    return view("manager.worktimings",compact("timings"));
+}
 
 
 }

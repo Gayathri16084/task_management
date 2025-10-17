@@ -86,3 +86,7 @@ Route::get("manager/profile",[ManagerController::class,"profileview"])->name("ma
 Route::get("manager/profile/edit",[ManagerController::class,"profileeditview"])->name("manager.profileedit");
 
 Route::post('/manager/profile/update', [ManagerController::class, 'updateProfile'])->name('manager.profileupdate');
+
+//worktimings
+
+Route::get('/manager/worktimings', [ManagerController::class, 'worktimings'])->name('manager.worktimings');
